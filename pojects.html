@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>html css projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    section,
+    .poster,
+    .stories,
+    .sbox,
+    .imgWraper,
+    .heartBox,
+    .center,
+    .flag {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section {
+      height: 100vh;
+    }
+
+    button,
+    input {
+      height: 4rem;
+      width: 8rem;
+      background: black;
+      color: white;
+      border: none;
+    }
+
+    .bg {
+      background: linear-gradient(45deg, yellow, red);
+      padding: 0.2rem;
+
+      &:hover {
+        background: linear-gradient(45deg, red, yellow);
+        transform: scale(0.9);
+      }
+    }
+
+    #search {
+      transition: all 0.5s;
+
+      &:focus {
+        border: 4px solid yellow;
+        border-radius: 10px;
+        width: 70vh;
+      }
+
+      &::placeholder {
+        font-weight: 200;
+      }
+
+      &:focus::placeholder {
+        color: transparent;
+      }
+    }
+
+    .card,
+    img {
+      background: black;
+      border-radius: 10px;
+      color: white;
+    }
+
+    .One {
+      max-width: 25rem;
+      object-fit: cover;
+    }
+
+    #profile {
+      width: 100px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .a,
+    .b,
+    .box,
+    .archari {
+      width: 100px;
+      height: 100px;
+      background: blue;
+      border-radius: 50%;
+      margin: 5px;
+      animation: loop 3s infinite;
+    }
+
+    @keyframes loop {
+      0% {
+        width: 1px;
+        box-shadow: 3px 3px 3px red;
+      }
+
+      50% {
+        width: 70px;
+        box-shadow: 4px 4px 4px pink;
+      }
+
+      100% {
+        width: 1px;
+        box-shadow: 5px 5px 5px 5px red;
+      }
+    }
+
+    .b {
+      height: 0px;
+    }
+
+    .box {
+      border-radius: 0%;
+
+      animation: rotate 3s infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      30% {
+        transform: rotate(45deg);
+      }
+
+      60% {
+        transform: rotate(90deg);
+      }
+
+      90% {
+        transform: rotate(135deg);
+      }
+
+      100% {
+        transform: rotate(180deg);
+      }
+    }
+
+    .archari {
+      background-color: black;
+      padding: 9rem;
+      animation: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+    }
+
+    .ch {
+      background: blue;
+      padding: 7rem;
+    }
+
+    .ry {
+      background-color: red;
+      padding: 5rem;
+    }
+
+    .lo {
+      background-color: yellow;
+      padding: 3rem;
+    }
+
+    ul,
+    li {
+      display: flex;
+      text-decoration: none;
+      gap: 10px;
+    }
+
+    .stats {
+      display: none;
+    }
+
+    .card:hover .stats {
+      display: flex;
+    }
+
+    .Two {
+      display: flex;
+    }
+
+    .change:after {
+      content: "coding";
+      background-color: palegoldenrod;
+      animation: change 3s infinite;
+    }
+
+    @keyframes change {
+      0% {
+        content: 'animation';
+      }
+
+      50% {
+        content: "video making";
+      }
+    }
+
+    .squ,
+    .rus,
+    .mada,
+    .flag {
+      width: 400px;
+      height: 400px;
+      background-color: aqua;
+      position: relative;
+    }
+
+    .squ {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      background-color: red;
+    }
+
+    .oneRow {
+      background-color: black;
+    }
+
+    .threeRow {
+      background-color: yellow;
+    }
+
+    .rus {
+      display: grid;
+      background-color: blue;
+      grid-template-columns: repeat(3, 1fr);
+      border: solid 1px black;
+    }
+
+    .col:nth-child(2) {
+      background-color: white;
+    }
+
+    .col:nth-child(3) {
+      background-color: red;
+    }
+
+    .mada {
+      display: flex;
+    }
+
+    .strip {
+      width: 200px;
+      height: 50%;
+      background-color: red;
+    }
+
+    .rem {
+      width: 200px;
+      height: 400px;
+      background-color: whitesmoke;
+    }
+
+    .strip:nth-child(2) {
+      background-color: green;
+    }
+
+    .brr>img {
+      border-radius: 50%;
+    }
+
+    .editprofile {
+      width: 100%;
+      height: 50px;
+      border: 1px solid blue;
+      border-radius: 11px;
+
+      &:hover {
+        background: gray;
+      }
+    }
+
+    .pro>h1,
+    h5 {
+      margin: 0px;
+    }
+
+    .squ>.Row {
+      background-color: orange;
+    }
+
+    .Row:nth-child(2) {
+      background-color: #fff;
+    }
+
+    .Row:nth-child(3) {
+      background-color: green;
+    }
+
+    .cir {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      top: 37%;
+      left: 37%;
+      background-color: orange;
+    }
+
+    .line {
+      width: 60%;
+      height: 20%;
+      background-color: #fff;
+    }
+
+    .sbox {
+      flex-direction: column;
+    }
+
+    .flag,
+    . {
+      background: red;
+    }
+
+    .bro,
+    .exra {
+      transform: rotate(90deg);
+      position: absolute;
+    }
+
+    .vala {
+      width: 100%;
+      height: 20%;
+      background-color: yellow;
+    }
+
+    .blo {
+      width: 50%;
+      height: 50%;
+      background-color: blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exra {
+      left: -100px;
+    }
+
+    .boxla {
+      width: 100px;
+      height: 100px;
+      background-color: olive;
+      border: 2px solid wheat;
+      border-radius: 40px;
+    }
+
+    .label {
+      width: 100px;
+      height: 40px;
+      border: 3px solid;
+      border-radius: 40px;
+      padding: 5px;
+    }
+
+    .togleInput {
+      display: none;
+    }
+
+    .Switch {
+      width: 40px;
+      height: 40px;
+      background-color: black;
+      border-radius: 40px;
+      transition: all .3s;
+    }
+
+    .togleInput:checked~.Switch {
+      transform: translateX(calc(100px - 40px));
+    }
+
+    .loadshel,
+    .pankti {
+      width: 70%;
+      height: 50px;
+      background-color: blue;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .pankti {
+      animation: fill 5s infinite;
+      width: 0;
+      height: 50px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+    }
+
+    @keyframes fill {
+      20% {
+        width: 20%;
+        background-color: gold;
+      }
+
+      40% {
+        width: 40%;
+      }
+
+      60% {
+        width: 60%;
+      }
+
+      80% {
+        width: 100%;
+        background-color: yellow;
+      }
+
+      100% {
+        width: 110%;
+        background-color: rgb(73, 73, 182);
+      }
+    }
+
+    .lod::after {
+      content: "";
+      animation: per 5s infinite;
+    }
+
+    @keyframes per {
+      10% {
+        content: "25%";
+      }
+
+      20% {
+        content: "40%";
+      }
+
+      50% {
+        content: "51%";
+      }
+
+      60% {
+        content: "79%";
+      }
+
+      80% {
+        content: "100%";
+      }
+    }
+
+    .poster {
+      width: 300px;
+      height: 250px;
+      background-color: blue;
+      text-transform: uppercase;
+      transition: all 5s;
+      border-radius: 10px;
+
+      &:hover {
+        transform: rotateY(180deg);
+        transform-style: preserve-3d;
+      }
+    }
+
+    .poster:hover .front {
+      display: none;
+    }
+
+    .back {
+      display: none;
+    }
+
+    .poster:hover .back {
+      display: block;
+      transform: rotateY(180deg);
+    }
+
+    .front,
+    .backL {
+      backface-visibility: hidden;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid black;
+      animation: rro 1s infinite;
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      background-color: black;
+      border-radius: 50%;
+      animation: rop 1s infinite;
+    }
+
+    @keyframes rro {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rop {
+      100% {
+        border-radius: 50%;
+      }
+    }
+
+    .nop {
+      border: 20px solid blanchedalmond;
+      border-top: 20px solid;
+    }
+
+    .imgWraper {
+      width: 100px;
+      height: 100px;
+      padding: 6px;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .imgWraper>img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 3px solid black;
+    }
+
+    .sbox {
+      padding: 5px;
+    }
+
+
+    .new {
+      background: linear-gradient(45deg, yellow, red, blue);
+    }
+
+    .viewed {
+      background: gray;
+    }
+
+    .live::after {
+      content: "live";
+      position: absolute;
+      background-color: red;
+      padding: 5px;
+      border-radius: 10px;
+      bottom: 0;
+    }
+
+    .graph {
+      display: grid;
+      grid-template-columns: repeat(52, 1fr);
+      background-color: black;
+    }
+
+    .square {
+      width: 10px;
+      height: 10px;
+      background-color: green;
+    }
+
+    [data-value="0"] {
+      background-color: gray;
+    }
+
+    [data-value="3"] {
+      background-color: rgb(64, 128, 64);
+    }
+
+    [data-value="5"] {
+      background-color: rgb(54, 186, 54);
+    }
+
+    [data-value="10"] {
+      background-color: rgb(17, 239, 17);
+    }
+
+    .tas {
+      border: solid black 2px;
+      width: 300px;
+      height: 400px;
+      border-radius: 10px;
+      display: grid;
+      grid-template-rows: 10%, 80%, 10%;
+    }
+
+    .top {
+      font-size: 2rem;
+      padding: 5px;
+      line-height: 0;
+    }
+
+    .center {
+      font-size: 4rem;
+    }
+
+    .bottom,
+    .heartBox:nth-child(3),
+    :nth-child(4) {
+      transform: rotate(180deg);
+    }
+
+    .cento {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .conserver {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.img-raper {
+  width: 100%;
+  height: 100%;
+}
+
+.img-raper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.oneto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(255, 192, 203, 0); /* Transparent initially */
+  transition: background-color 0.2s, visibility 0.2s;
+  border-radius: 10px;
+  visibility: hidden;
+}
+
+.conserver:hover .oneto {
+  background-color: rgba(215, 240, 27, 0.5); /* Pink on hover */
+  visibility: visible;
+}
+
+  </style>
+</head>
+
+<body>
+  <section class="main">
+    <div class="bg">
+      <button>Start Coding</button>
+    </div>
+  </section>
+
+  <section class="main">
+    <input type="search" placeholder="search" id="search">
+  </section>
+
+  <section class="main">
+    <div class="card">
+
+      <div class="card One">
+        <img src="reso/sqb.jpg" alt="main img">
+      </div>
+
+      <div class="card Two">
+        <img src="reso/sqa.jpg" alt="" id="profile">
+        <div class="text">
+          <h1>gradient projects</h1>
+          <h5>dhanraj830</h5>
+        </div>
+      </div>
+      <div class="stats">
+        <ul>
+          <li>like</li>
+          <li>comments</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="main">
+
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+
+  </section>
+
+  <section class="main">
+
+    <div class="b"></div>
+    <div class="b"></div>
+    <div class="b"></div>
+
+  </section>
+
+  <section class="main">
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+  </section>
+
+  <section class="main">
+    <div class="archari ar">
+      <div class="archari ch">
+        <div class="archari ry">
+          <div class="archari lo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="main">
+    <h1 class="change">i love <span></span></h1>
+  </section>
+
+  <section class="main">
+    <div class="squ">
+      <div class="oneRow"></div>
+      <div class="twoRow"></div>
+      <div class="threeRow"></div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="rus">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="mada">
+      <div class="rem"></div>
+
+      <div class="sec">
+        <div class="strip"></div>
+        <div class="strip"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="card">
+
+      <div class="One brr">
+        <img src="reso/sqd.jpg" alt="main img">
+      </div>
+
+      <div class="card pro">
+        <h1>gradient projects</h1>
+        <h5>pankake</h5>
+
+        <p>i am a frontend dev</p>
+        <button class="editprofile">edit profile</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="squ">
+      <div class="one Row"></div>
+      <div class="two Row"></div>
+      <div class="three Row"></div>
+      <div class="cir"></div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="flag nob">
+      <div class="line"></div>
+      <div class="line bro"></div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="flag nob">
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="blo">
+      <div class="vala"></div>
+      <div class="vala exra"></div>
+    </div>
+  </section>
+
+  <section class="main">
+
+    <label class="label">
+      <input type="checkbox" class="togleInput"></input>
+      <div class="Switch"></div>
+    </label>
+
+  </section>
+
+  <section class="main">
+    <div class="loadshel">
+      <div class="pankti">
+        <marquee>
+          <h1 class="lod">loading</h1>
+        </marquee>
+      </div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="poster">
+      <div class="front">
+        <h1>dhnraj</h1>
+      </div>
+      <div class="back">
+        <h1>blue</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="circle">
+      <div class="dot"></div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="circle nop">
+      <div class="spin"></div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="stories">
+
+      <div class="sbox">
+        <div class="imgWraper viewed">
+          <img src="reso/imc.jpg" alt="" class="userImg">
+        </div>
+        <p>moun_teno</p>
+      </div>
+
+      <div class="sbox">
+        <div class="imgWraper viewed live">
+          <img src="reso/imd.jpg" alt="" class="userImg">
+        </div>
+        <p>freeSky</p>
+      </div>
+
+      <div class="sbox">
+        <div class="imgWraper new">
+          <img src="reso/ime.jpg" alt="" class="userImg">
+        </div>
+        <p>twoduck_34</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="graph">
+      <ul class="week-1">
+        <li class="square" data-value="3"></li>
+        <li class="square" data-value="0"></li>
+        <li class="square" data-value="5"></li>
+        <li class="square" data-value="3"></li>
+        <li class="square" data-value="10"></li>
+      </ul>
+      </ul </div>
+
+      <i class="fa-solid fa-diamond"></i>
+      <i class="fa-solid fa-cubes"></i>
+      <i class="fa-regular fa-face-laugh"></i>
+  </section>
+
+  <section>
+    <div class="tas">
+      <div class="top">
+        <i class="fa-solid fa-heart"></i>
+        <p>A</p>
+      </div>
+
+      <div class="center">
+        <i class="fa-solid fa-heart"></i>
+      </div>
+
+      <div class="bottom top">
+        <i class="fa-solid fa-heart"></i>
+        <p>A</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="tas">
+      <div class="top">
+        <i class="fa-solid fa-heart"></i>
+        <p>4</p>
+      </div>
+
+      <div class="center cento">
+        <div class="heartBox">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="heartBox">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="heartBox">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="heartBox">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+      </div>
+
+      <div class="bottom top">
+        <i class="fa-solid fa-heart"></i>
+        <p>4</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="conserver">
+      <div class="img-raper">
+        <img src="reso/imc.jpg" alt="">
+      </div>
+      <div class="oneto">
+        <p>view project</p>
+      </div>
+    </div>
+  </section>
+  
+</body>
+
+</html>
